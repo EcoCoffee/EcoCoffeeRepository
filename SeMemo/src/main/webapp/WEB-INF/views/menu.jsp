@@ -13,6 +13,6 @@
 		<li><a href="sentMemos">보낸 쪽지</a></li>
 		<li><a href="receivedMemos">받은 쪽지</a></li>
 		<li><a href="schdule">스케쥴</a></li>
-		<li>씨팍</li>
+		<li>씨팍이게뭐냐</li>
 	</ul>
 </nav>
