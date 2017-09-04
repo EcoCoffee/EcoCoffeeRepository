@@ -14,5 +14,6 @@
 		<li><a href="receivedMemos">받은 쪽지</a></li>
 		<li><a href="schdule">스케쥴</a></li>
 		<li>씨팍이게뭐냐 현태야 내가 형이다</li>
+		<li>1차수정</li>
 	</ul>
 </nav>
