@@ -4,16 +4,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>일정관리</title>
-<script src="resources/js/jquery-3.2.1.min.js"></script>
-<script src="resources/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/css/bootstrap-theme.min.css">
-<script type="text/javascript" src='resources/js/sweetalert.min.js?ver=1'></script>
-<link rel="stylesheet" type="text/css"
-  href='./css/sweetalert.css?ver=1.2'>
-<script type="text/javascript" src="resources/js/stringBuffer.js"></script>
-<script type="text/javascript" src="resources/js/calendar.js"></script>
-<script type="text/javascript" src="resources/js/calendarSchdule.js"></script>
+
+
+
+<script src="resources/js/jquery-3.2.1.min.js"></script> <!-- 필수 -->
+<script src="resources/js/bootstrap.min.js"></script> <!-- 날짜 클릭했을때 예약창 로드 -->
+
+<link rel="stylesheet" href="resources/css/bootstrap.min.css"> <!-- css -->
+
+<script type="text/javascript" src='resources/js/sweetalert.min.js?ver=1'></script><!-- 확인 action -->
+<script type="text/javascript" src="resources/js/stringBuffer.js"></script> <!-- 필수 -->
+<script type="text/javascript" src="resources/js/calendar.js"></script> <!-- 필수 -->
+<script type="text/javascript" src="resources/js/calendarSchdule.js"></script> <!-- 필수 -->
+
+
 <style type="text/css">
 
 

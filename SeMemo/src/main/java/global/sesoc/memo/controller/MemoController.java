@@ -22,7 +22,7 @@ import global.sesoc.memo.vo.MemoVO;
 public class MemoController {
 	@Autowired
 	SqlSession sqlsession;
-	
+
 	/**
 	 * 보내기 화면 처리
 	 */

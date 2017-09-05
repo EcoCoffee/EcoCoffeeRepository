@@ -13,7 +13,8 @@
 		<li><a href="sentMemos">보낸 쪽지</a></li>
 		<li><a href="receivedMemos">받은 쪽지</a></li>
 		<li><a href="schdule">스케쥴</a></li>
-		<li>씨팍이게뭐냐 현태야 내가 형이다</li>
+		<li><a href="test">테스트</a></li>
+		<li>심정훈선생님</li>
 		<li>1차수정</li>
 		<li>2차수정</li>
 		

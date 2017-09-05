@@ -26,4 +26,16 @@ public class ScheduleController {
 	    model.addAttribute("custname", loginName);
 	    return "schdule";
 	  }
+	  
+	  // test 이동처리
+	  @RequestMapping(value="test", method=RequestMethod.GET)
+	  public String test(Model model, HttpSession session) {
+		  //로그인 한 아이디와 이름 받고
+		  String loginId = (String)session.getAttribute("loginId");
+		  String loginName = (String)session.getAttribute("loginName");
+		  //모델에 담고
+		model.addAttribute("custid", loginId);
+	    model.addAttribute("custname", loginName);
+	    return "test";
+	  }	  
 }
