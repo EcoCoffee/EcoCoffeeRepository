@@ -35,4 +35,6 @@
 	<select id="selectmemo" resultType="Memo">
 		select * from memos where fromid = #{fromId} order by inputdate desc
 	</select>
+	
 </mapper>
+

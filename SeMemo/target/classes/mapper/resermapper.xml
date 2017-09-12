@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 메모 처리 SQL -->
+<mapper namespace="global.sesoc.memo.dao.ReservationDAO">
+	
+	<!-- 예약하기 -->
+	<insert id="schduleAdd" parameterType="Reservation">
+	insert into reservation(resernum, cafeid, reserDate, reserTime) values(
+		reservation_seq.nextval,
+		#{cafeid},
+		#{reserDate},
+		#{reserTime}
+	) 
+	</insert>
+	<!-- 값 읽어오기 -->
+	<select id="readReservation" resultType="Reservation">
+		select * from reservation where cafeid='TERAROSA'
+	</select>
+</mapper>
+

@@ -7,8 +7,10 @@
 		<!-- typeAlias 정의 -->
 		<typeAlias type="global.sesoc.memo.vo.MemberVO" alias ="Member"/>
 		<typeAlias type="global.sesoc.memo.vo.MemoVO" alias ="Memo"/>
+		<typeAlias type="global.sesoc.memo.vo.ReservationVO" alias ="Reservation"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/mapper.xml" />
+		<mapper resource="mapper/resermapper.xml" />
 	</mappers>
 </configuration>
