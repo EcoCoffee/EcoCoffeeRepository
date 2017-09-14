@@ -1,23 +1,23 @@
 package global.sesoc.projectEC.vo;
 
 public class ReservationVO {
-	
-	int resernum; 				//예약번호
-	String cafeid;				//카페아이디
-	String cafename;			//카페이름
-	String cafetel;				//카페전화
-	String businessid;			//수거업체아이디
-	String businessname;		//수거업체이름
-	String businesstel;			//수거업체전화
-	String reserdate;			//예약날짜
-    String resertime;			//예약시간
-    String msg;					//쪽지상태
+
+	   int resernum; 	 	//예약 번호
+	   String cafeid; 	 	//카페 아이디
+	   String cafename;	 	//카페 이름
+	   String cafetel;   	//카페 전화번호
+	   String businessid; 	//수거업체아이디
+	   String businessname; //수거업체이름
+	   String businesstel; 	//수거업체 전화번호
+	   String reserDate; 	//예약 날짜
+	   String reserTime; 	//예약 시간
+	   String msg; 			//쪽지상태
 	public ReservationVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public ReservationVO(int resernum, String cafeid, String cafename, String cafetel, String businessid,
-			String businessname, String businesstel, String reserdate, String resertime, String msg) {
+			String businessname, String businesstel, String reserDate, String reserTime, String msg) {
 		super();
 		this.resernum = resernum;
 		this.cafeid = cafeid;
@@ -26,8 +26,8 @@ public class ReservationVO {
 		this.businessid = businessid;
 		this.businessname = businessname;
 		this.businesstel = businesstel;
-		this.reserdate = reserdate;
-		this.resertime = resertime;
+		this.reserDate = reserDate;
+		this.reserTime = reserTime;
 		this.msg = msg;
 	}
 	public int getResernum() {
@@ -72,17 +72,17 @@ public class ReservationVO {
 	public void setBusinesstel(String businesstel) {
 		this.businesstel = businesstel;
 	}
-	public String getReserdate() {
-		return reserdate;
+	public String getreserDate() {
+		return reserDate;
 	}
-	public void setReserdate(String reserdate) {
-		this.reserdate = reserdate;
+	public void setreserDate(String reserDate) {
+		this.reserDate = reserDate;
 	}
-	public String getResertime() {
-		return resertime;
+	public String getreserTime() {
+		return reserTime;
 	}
-	public void setResertime(String resertime) {
-		this.resertime = resertime;
+	public void setreserTime(String reserTime) {
+		this.reserTime = reserTime;
 	}
 	public String getMsg() {
 		return msg;
@@ -94,8 +94,8 @@ public class ReservationVO {
 	public String toString() {
 		return "ReservationVO [resernum=" + resernum + ", cafeid=" + cafeid + ", cafename=" + cafename + ", cafetel="
 				+ cafetel + ", businessid=" + businessid + ", businessname=" + businessname + ", businesstel="
-				+ businesstel + ", reserdate=" + reserdate + ", resertime=" + resertime + ", msg=" + msg + "]";
+				+ businesstel + ", reserDate=" + reserDate + ", reserTime=" + reserTime + ", msg=" + msg + "]";
 	}
-	
-    
+	   
+	   
 }

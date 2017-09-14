@@ -11,6 +11,6 @@
 	
 	<mappers>
 		<mapper resource="memberMapper.xml" />
-		<mapper resource="resermapper.xml" />
+		<mapper resource="reserMapper.xml" />
 	</mappers>
 </configuration>

@@ -24,7 +24,7 @@
 </head>
 
 <!-- Favicons -->
-<link rel="shortcut icon" href="../resources/assets/images/icons/favicon.ico">
+<link rel="shortcut icon" href="../resources/assets/images/icons/favicon.png">
 
 <!--instagram-->
 <link rel="stylesheet" type="text/css" href="../resources/assets/helpers/instagram.css">
@@ -207,97 +207,45 @@
 
 //가입폼 확인
 function formCheck() {
-	var pw = document.getElementById('password');
-	var pw2 = document.getElementById('password2');
-	var name = document.getElementById('name');
-	
-	if (id.value.length < 3 || id.value.length > 10) {
-		alert("Please input ID to 3 to 10 characters.");
-		id.focus();
-		id.select();
-		return false;
-	}
-	if (pw.value.length < 3 || pw.value.length > 10) {
-		alert("Please input PASSWORD to 3 to 10 characters.");
-		pw.focus();
-		pw.select();
-		return false;
-	}
-	if (pw.value != pw2.value) {
-		alert("Please enter your PASSWORD accurately.");
-		pw.focus();
-		pw.select();
-		return false;
-	}
-	if (name.value == '') {
-		alert("Please input your NAME");
-		name.focus();
-		name.select();
-		return false;
-	}
-	return true;
+   var pw = document.getElementById('password');
+   var pw2 = document.getElementById('password2');
+   var name = document.getElementById('name');
+   
+   if (id.value.length < 3 || id.value.length > 10) {
+      alert("Please input ID to 3 to 10 characters.");
+      id.focus();
+      id.select();
+      return false;
+   }
+   if (pw.value.length < 3 || pw.value.length > 10) {
+      alert("Please input PASSWORD to 3 to 10 characters.");
+      pw.focus();
+      pw.select();
+      return false;
+   }
+   if (pw.value != pw2.value) {
+      alert("Please enter your PASSWORD accurately.");
+      pw.focus();
+      pw.select();
+      return false;
+   }
+   if (name.value == '') {
+      alert("Please input your NAME");
+      name.focus();
+      name.select();
+      return false;
+   }
+   return true;
 }
 
 // 우편번호 찾기 찾기 화면을 넣을 element
 var element_wrap = document.getElementById('wrap');
 
 function foldDaumPostcode() {
-	// iframe을 넣은 element를 안보이게 한다.
-	element_wrap.style.display = 'none';
+   // iframe을 넣은 element를 안보이게 한다.
+   element_wrap.style.display = 'none';
 }
 
-function sample4_execDaumPostcode() {
-	new daum.Postcode({
-		oncomplete: function(data) {
-			// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-			// 도로명 주소의 노출 규칙에 따라 주소를 조합한다.
-            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-            var fullRoadAddr = data.roadAddress; // 도로명 주소 변수
-            var extraRoadAddr = ''; // 도로명 조합형 주소 변수
-
-            // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-            // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-            if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-            	extraRoadAddr += data.bname;
-            }
-            
-            // 건물명이 있고, 공동주택일 경우 추가한다.
-            if(data.buildingName !== '' && data.apartment === 'Y'){
-            	extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-            }
-            
-            // 도로명, 지번 조합형 주소가 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-            if(extraRoadAddr !== ''){
-            	extraRoadAddr = ' (' + extraRoadAddr + ')';
-            }
-            
-            // 도로명, 지번 주소의 유무에 따라 해당 조합형 주소를 추가한다.
-            if(fullRoadAddr !== ''){
-            	fullRoadAddr += extraRoadAddr;
-            }
-            
-            // 우편번호와 주소 정보를 해당 필드에 넣는다.
-            document.getElementById('sample4_postcode').value = data.zonecode; //5자리 새우편번호 사용
-            document.getElementById('sample4_roadAddress').value = fullRoadAddr;
-            document.getElementById('sample4_jibunAddress').value = data.jibunAddress;
-
-            // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
-            if(data.autoRoadAddress) {
-            	// 예상되는 도로명 주소에 조합형 주소를 추가한다.
-                var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
-                document.getElementById('guide').innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
-            } else if(data.autoJibunAddress) {
-            	var expJibunAddr = data.autoJibunAddress;
-            	document.getElementById('guide').innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
-            } else {
-            	document.getElementById('guide').innerHTML = '';
-            	}
-            }
-        }).open();
-    }
-</script>
-<script>
 //*************** 라디오 버튼용 시작 ***************//
 function setRadioCl(e){ 
     var srcEl = getSrc(e);
@@ -329,31 +277,29 @@ function getSrc(e)
     <div class="container">
             <div class="float-right user-account-btn dropdown">
             <div class="user-profile clearfix">
-            	<img width="28" src="./resources/assets/image-resources/gravatar.jpg">
+               <img width="28" src="../resources/assets/image-resources/gravatar.jpg">
             
             <c:if test="${loginId == null}">
-            <a href="<%=gc%>/member/login" title="Login" class="btn btn-sm float-left btn-alt btn-hover mrg10R btn-default">
+            <a href="<%=gc%>/member/login" class="btn btn-sm float-left btn-alt btn-hover mrg10R btn-default">
                 <span>LOGIN</span>
                 <i class="glyph-icon icon-arrow-right"></i>
             </a>
-            <a href="<%=gc%>/member/join" title="Join" class="btn btn-sm float-left btn-alt btn-hover mrg10R btn-default">
+            <a href="<%=gc%>/member/join" class="btn btn-sm float-left btn-alt btn-hover mrg10R btn-default">
                 <span>JOIN</span>
                 <i class="glyph-icon icon-arrow-right"></i>
             </a>
             </c:if>
             
             <c:if test="${loginId != null}">
-			<div align="justify" style="width : 415px;">
-				<span>${sessionScope.loginName}(${sessionScope.loginId})님 로그인&nbsp;&nbsp;</span>
-                <a href="<%=gc%>/member/update" title="Update" class="btn btn-sm float-left btn-alt btn-hover mrg10R btn-default">
-                <span>UPDATE</span>
-                <i class="glyph-icon icon-arrow-right"></i>
-            </a>
-            <a href="<%=gc%>/member/logout" title="Logout" class="btn btn-sm float-left btn-alt btn-hover mrg10R btn-default">
-                <span>LOGOUT</span>
-                <i class="glyph-icon icon-arrow-right"></i>
-            </a>
-			</div>
+               <a href="<%=gc%>/member/logout" class="btn btn-sm float-right btn-alt btn-hover mrg10R btn-default">
+                   <span>LOGOUT</span>
+                   <i class="glyph-icon icon-arrow-right"></i>
+               </a>
+                <a href="<%=gc%>/member/update" class="btn btn-sm float-right btn-alt btn-hover mrg10R btn-default">
+                     <span>UPDATE</span>
+                   <i class="glyph-icon icon-arrow-right"></i>
+               </a>
+            &nbsp;<span>${sessionScope.loginName}&nbsp;(${sessionScope.loginId})님&nbsp;&nbsp;</span>&nbsp;
             </c:if>
             </div>
             </div>
@@ -363,7 +309,7 @@ function getSrc(e)
 
 <div class="main-header bg-header wow fadeInDown">
     <div class="container">
-    <a href="<%=gc%>/mainHome" class="header-logo" title="EcoCoffee - Create perfect RECYLCE Coffee"></a><!-- .header-logo -->
+    <a href="<%=gc%>/mainHome" class="header-logo"></a><!-- .header-logo -->
     <div class="right-header-btn">
         <div id="mobile-navigation">
             <button id="nav-toggle" class="collapsed" data-toggle="collapse" data-target=".header-nav"><span></span></button>
@@ -371,48 +317,48 @@ function getSrc(e)
     </div><!-- .header-logo -->
     <ul class="header-nav collapse">
         <li>
-            <a href="#" title="Homepages">
+            <a href="#">
                 홈페이지소개
                 <i class="glyph-icon icon-angle-down"></i>
             </a>
             <ul>
-                <li><a href="index.html" title="Homepage example 1"><span>홈페이지 소개</span></a></li>
-                <li><a href="index-alt.html" title="Homepage example 2"><span>커피박 소개</span></a></li>
-                <li><a href="<%=gc%>/menu/service" title="Homepage example 3"><span>에코마일리지</span></a></li>
+                <li><a href="index.html"><span>홈페이지 소개</span></a></li>
+                <li><a href="index-alt.html"><span>커피박 소개</span></a></li>
+                <li><a href="<%=gc%>/menu/service"><span>에코마일리지</span></a></li>
                 
             </ul>
         </li>
         <li>
-            <a href="<%=gc%>/menu/map" title="Hero sections">
+            <a href="#">
                가맹점소개
                 <i class="glyph-icon icon-angle-down"></i>
             </a>
             <ul class="footer-nav">
-                <li><a href="hero-static.html" title="Static hero sections"><span>가맹 카페</span></a></li>
-                <li><a href="hero-alignments.html" title="Hero alignments"><span>가맹 수거업체</span></a></li>
+                <li><a href="<%=gc%>/menu/map"><span>가맹 카페</span></a></li>
+                <li><a href="hero-alignments.html"><span>가맹 수거업체</span></a></li>
            
             </ul>
         </li>
        <li>
-            <a href="#" title="Components">
+            <a href="#">
                 서비스 이용하기
                 <i class="glyph-icon icon-angle-down"></i>
             </a>
             <ul>
                 <li>
-                    <a href="content-boxes.html" title="Components framework">
+                    <a href="<%=gc%>/menu/schedule">
                         <span>예약관련</span>
                     </a>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="<%=gc%>/menu/product" title="Components">
+            <a href="<%=gc%>/menu/product">
                상품페이지
             </a>
         </li>
         <li>
-            <a href="#" title="ContactUs">
+            <a href="#">
                 Contact US               
             </a>
         </li>
@@ -420,7 +366,6 @@ function getSrc(e)
     </ul><!-- .header-nav -->
 </div><!-- .container -->
 </div><!-- .main-header -->
-</div>
 
 <div class="hero-box hero-box-smaller full-bg-13 font-inverse" data-top-bottom="background-position: 50% 0px;" data-bottom-top="background-position: 50% -600px;">
        
@@ -430,7 +375,16 @@ function getSrc(e)
     </div>
     <div class="hero-overlay bg-black"></div>
 </div>
-<div class="pad15L pad15R mrg25T">
+<div class="pad15L pad15R mrg25T"></div>
+          
+<div align="center" style= "background : white;">
+  <div class="row" style = "background : white;">
+  <div style="width : 1000px; background : white;">
+  
+<!-- Parsley -->
+
+<script type="text/javascript" src="../resources/assets/widgets/parsley/parsley.js"></script>
+
 <div id="page-title">
     <h2>Welcome To ECO COFFEE</h2>
     <p>Please Update Your Information!</p>
@@ -483,7 +437,7 @@ function getSrc(e)
                 <div class="form-group">
                     <label class="col-sm-3 control-label">COMPANY <br> POST CODE</label>
                     <div class="col-sm-6">
-                        <input type="text" id="sample4_postcode" name="postcode" class="form-control popover-button-default" readonly="readonly" value="${member.postcode}">
+                        <input type="text" id="sample4_postcode" name="postcode" class="form-control popover-button-default" readonly="readonly" value="${member.postcode}"><br>
                         <span class="input-group-btn">
                         <button class="btn btn-primary" type="button" onclick="sample4_execDaumPostcode()">Postcode</button>
                         </span>
@@ -520,30 +474,125 @@ function getSrc(e)
                         </label>
                     </div>
                 </div>
+                
+                <!-- 좌표넣기 연습 -->
+                  <div class="form-group" style="display:none;">
+                     <label class="col-sm-3 control-label">Lat</label>
+                     <div class="col-sm-6">
+                     <input type="text" class="form-control popover-button-default" id="lat" name="lat" value="${member.lat}"> 
+                     </div>
+                     <br><br>
+                     <label class="col-sm-3 control-label">Lng</label>
+                     <div class="col-sm-6">
+                     <input type="text" class="form-control popover-button-default" id="lng" name="lng" value="${member.lng}"> 
+                     </div>
+                     
+                     <!-- map이 있어야 좌표가 찍힘. 반드시 필요해!! -->   
+                     <div id="map" style="width: 300px; height: 300px; margin-top: 10px; display:none"></div>
+                  </div>
+                
                 <div class="form-group">
-                	<div>
-						<button type = "submit" class="btn btn-success btn-block">UPDATE</button>
-						<button type = "button" class="btn btn-success btn-block" onclick="location.href='<%=cp%>/mainHome'">BACK</button>
-					</div>
-				</div>
+                   <div>
+                  <button type = "submit" class="btn btn-success btn-block">UPDATE</button>
+                  <button type = "button" class="btn btn-success btn-block" onclick="location.href='<%=cp%>/mainHome'">BACK</button>
+               </div>
+            </div>
             </form>
         </div>
     </div>
 </div>
 </div>
+</div>
+</div>
 
 <div class="main-footer bg-gradient-4 clearfix">
-	<div class="footer-pane bg-gradient-4">
+   <div class="footer-pane bg-gradient-4">
         <div class="container clearfix">
             <div class="logo">&copy; 2017 SCIT 33rd A Class ECO COFFEE All Rights Reserved.</div>
             <div class="footer-nav-bottom">
-              	Contact us.&nbsp;&nbsp;
-					<i class="glyph-icon icon-envelope-o"></i>
+                 Contact us.&nbsp;&nbsp;
+               <i class="glyph-icon icon-envelope-o"></i>
                     <a href="https://www.instagram.com/coffeerecycle/" title="">Instagram Message</a>
             </div>
         </div>
    </div>
 </div>
+
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+
+   <!--다음지도API,라이브러리불러오기, 반드시 실행 코드보다 먼저 선언되어야 합니다.-->
+<script type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=90659a87ed8bdd7044bb32388141231d&libraries=services"></script>
+
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+mapOption = {
+    center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+    level: 5 // 지도의 확대 레벨
+};
+
+//지도를 생성합니다    
+var map = new daum.maps.Map(mapContainer, mapOption); 
+
+//주소-좌표 변환 객체를 생성
+var geocoder =  new daum.maps.services.Geocoder();
+
+//마커를 미리 생성
+var marker = new daum.maps.Marker({
+    position: new daum.maps.LatLng(33.450701, 126.570667),
+    map: map
+}); 
+
+function sample4_execDaumPostcode() {
+   new daum.Postcode({
+      oncomplete: function(data) {
+         // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+         // 도로명 주소의 노출 규칙에 따라 주소를 조합한다.
+            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+            var fullRoadAddr = data.roadAddress; // 최종 도로명 주소 변수
+            var extraRoadAddr = ''; // 도로명 조합형 주소 변수
+
+            // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+            // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+            if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+               extraRoadAddr += data.bname;
+            }
+            
+            // 건물명이 있고, 공동주택일 경우 추가한다.
+            if(data.buildingName !== '' && data.apartment === 'Y'){
+               extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+            }
+            
+            // 도로명, 지번 조합형 주소가 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+            if(extraRoadAddr !== ''){
+               extraRoadAddr = ' (' + extraRoadAddr + ')';
+            }
+            
+            // 도로명, 지번 주소의 유무에 따라 해당 조합형 주소를 추가한다.
+            if(fullRoadAddr !== ''){
+               fullRoadAddr += extraRoadAddr;
+            }
+            
+            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+            document.getElementById('sample4_postcode').value = data.zonecode; //5자리 새우편번호 사용
+            document.getElementById('sample4_roadAddress').value = fullRoadAddr;
+            document.getElementById('sample4_jibunAddress').value = data.jibunAddress;
+    
+           geocoder.addressSearch(fullRoadAddr, function(result, status) {
+               
+               if (status === daum.maps.services.Status.OK) {
+               var lat = result[0].y;
+               var lng = result[0].x;
+               
+                  document.getElementById('lat').value = lat;
+                  document.getElementById('lng').value = lng;
+               }
+            });             
+            }
+    }).open();
+   }
+</script>
 
 <!-- FRONTEND ELEMENTS -->
 

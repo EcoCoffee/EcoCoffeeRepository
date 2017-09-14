@@ -7,12 +7,17 @@
 <mapper namespace="global.sesoc.projectEC.dao.ReservationDAO">
 	
 	<!-- 예약하기 -->
-	<insert id="schduleAdd" parameterType="Reservation">
-	insert into reservation(resernum, cafeid, reserDate, reserTime) values(
-		reservation_seq.nextval,
-		#{cafeid},
-		#{reserDate},
-		#{reserTime}
+	<insert id="schduleAdd" parameterType="Reservation" >
+	insert into reservation(resernum, cafeid, cafename, cafetel, businessid, businessname, businesstel, reserDate, reserTime) values(
+		reservation_seq.nextval
+		,#{cafeid}
+		,#{cafename}
+		,#{cafetel}
+		,#{businessid}
+		,#{businessname}
+		,#{businesstel}
+		,#{reserDate}
+		,#{reserTime}
 	) 
 	</insert>
 	<!-- 값 읽어오기 -->

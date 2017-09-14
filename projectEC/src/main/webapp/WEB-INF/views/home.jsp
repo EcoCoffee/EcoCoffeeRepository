@@ -10,6 +10,9 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+<!-- Favicons -->
+<link rel="shortcut icon" href="./resources/assets/images/icons/favicon.png">
+
 <link href="./resources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="./resources/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="./resources/css/style.css" rel="stylesheet" type="text/css" />

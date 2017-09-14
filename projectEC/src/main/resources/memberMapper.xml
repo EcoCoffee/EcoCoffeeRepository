@@ -8,36 +8,36 @@
 
 	<!-- 회원 정보 저장 -->
 	<insert id="insertMember" parameterType="Member">
-      insert into member (
-         custid
-         , password
-         , custname
-         , name
-         , custtel
-         , tel
-         , postcode
-         , road
-         , jibun
-         , idno
-         , division
-         , lat
-         , lng
-      ) values (
-         #{custid}
-         , #{password}
-         , #{custname}
-         , #{name}
-         , #{custtel}
-         , #{tel}
-         , #{postcode}
-         , #{road}
-         , #{jibun}
-         , #{idno}
-         , #{division}
-         , #{lat}
-         , #{lng}
-      ) 
-   </insert>
+		insert into member (
+			custid
+			, password
+			, custname
+			, name
+			, custtel
+			, tel
+			, postcode
+			, road
+			, jibun
+			, idno
+			, division
+			, lat
+			, lng
+		) values (
+			#{custid}
+			, #{password}
+			, #{custname}
+			, #{name}
+			, #{custtel}
+			, #{tel}
+			, #{postcode}
+			, #{road}
+			, #{jibun}
+			, #{idno}
+			, #{division}
+			, #{lat}
+			, #{lng}
+		) 
+	</insert>
 	
 	<!-- ID로 회원 정보 검색 -->
 	<select id="selectMember" parameterType="String" resultType="Member">
@@ -58,7 +58,14 @@
 			, jibun = #{jibun}
 			, idno = #{idno}
 			, division = #{division}
+			, lat = #{lat}
+			, lng = #{lng}
 		where
 			custid = #{custid}
 	</update>
+	
+	<!-- 등록회원좌표모두 보기 -->
+   <select id = "selectAll" resultType="Member">
+      select custid, custname, custtel, lat, lng from member where division = 'business' 
+   </select>
 </mapper>

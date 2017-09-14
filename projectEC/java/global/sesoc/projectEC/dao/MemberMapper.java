@@ -1,5 +1,7 @@
 package global.sesoc.projectEC.dao;
 
+import java.util.ArrayList;
+
 import global.sesoc.projectEC.vo.Member;
 
 public interface MemberMapper {
@@ -12,4 +14,7 @@ public interface MemberMapper {
 	
 	//회원 정보 수정
 	public int updateMember(Member member);
+	
+	//회원정보 모두 보기
+	public ArrayList<Member> selectAll();
 }

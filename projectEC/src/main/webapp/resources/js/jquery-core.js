@@ -9589,7 +9589,6 @@
                             id = ++xhrId;
 
                         // Open the socket
-                        xhr.open( options.type, options.url, options.async, options.username, options.password );
 
                         // Apply custom fields if provided
                         if ( options.xhrFields ) {
@@ -9628,7 +9627,6 @@
                         // Do send the request
                         // This may raise an exception which is actually
                         // handled in jQuery.ajax (so no try/catch here)
-                        xhr.send( ( options.hasContent && options.data ) || null );
 
                         // Listener
                         callback = function( _, isAbort ) {

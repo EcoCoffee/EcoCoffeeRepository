@@ -18,7 +18,7 @@
 </head>
 
 <!-- Favicons -->
-<link rel="shortcut icon" href="../resources/assets/images/icons/favicon.ico">
+<link rel="shortcut icon" href="../resources/assets/images/icons/favicon.png">
 
 <!--instagram-->
 <link rel="stylesheet" type="text/css" href="../resources/assets/helpers/instagram.css">
@@ -208,31 +208,29 @@
     <div class="container">
             <div class="float-right user-account-btn dropdown">
             <div class="user-profile clearfix">
-            	<img width="28" src="./resources/assets/image-resources/gravatar.jpg">
+            	<img width="28" src="../resources/assets/image-resources/gravatar.jpg">
             
             <c:if test="${loginId == null}">
-            <a href="<%=gc%>/member/login" title="Login" class="btn btn-sm float-left btn-alt btn-hover mrg10R btn-default">
+            <a href="<%=gc%>/member/login" class="btn btn-sm float-left btn-alt btn-hover mrg10R btn-default">
                 <span>LOGIN</span>
                 <i class="glyph-icon icon-arrow-right"></i>
             </a>
-            <a href="<%=gc%>/member/join" title="Join" class="btn btn-sm float-left btn-alt btn-hover mrg10R btn-default">
+            <a href="<%=gc%>/member/join" class="btn btn-sm float-left btn-alt btn-hover mrg10R btn-default">
                 <span>JOIN</span>
                 <i class="glyph-icon icon-arrow-right"></i>
             </a>
             </c:if>
             
             <c:if test="${loginId != null}">
-			<div align="justify" style="width : 415px;">
-				<span>${sessionScope.loginName}(${sessionScope.loginId})님 로그인&nbsp;&nbsp;</span>
-                <a href="<%=gc%>/member/update" title="Update" class="btn btn-sm float-left btn-alt btn-hover mrg10R btn-default">
-                <span>UPDATE</span>
-                <i class="glyph-icon icon-arrow-right"></i>
-            </a>
-            <a href="<%=gc%>/member/logout" title="Logout" class="btn btn-sm float-left btn-alt btn-hover mrg10R btn-default">
-                <span>LOGOUT</span>
-                <i class="glyph-icon icon-arrow-right"></i>
-            </a>
-			</div>
+            	<a href="<%=gc%>/member/logout" class="btn btn-sm float-right btn-alt btn-hover mrg10R btn-default">
+	                <span>LOGOUT</span>
+	                <i class="glyph-icon icon-arrow-right"></i>
+	            </a>
+                <a href="<%=gc%>/member/update" class="btn btn-sm float-right btn-alt btn-hover mrg10R btn-default">
+               		<span>UPDATE</span>
+                	<i class="glyph-icon icon-arrow-right"></i>
+            	</a>
+				&nbsp;<span>${sessionScope.loginName}&nbsp;(${sessionScope.loginId})님&nbsp;&nbsp;</span>&nbsp;
             </c:if>
             </div>
             </div>
@@ -242,7 +240,7 @@
 
 <div class="main-header bg-header wow fadeInDown">
     <div class="container">
-    <a href="<%=gc%>/mainHome" class="header-logo" title="EcoCoffee - Create perfect RECYLCE Coffee"></a><!-- .header-logo -->
+    <a href="<%=gc%>/mainHome" class="header-logo"></a><!-- .header-logo -->
     <div class="right-header-btn">
         <div id="mobile-navigation">
             <button id="nav-toggle" class="collapsed" data-toggle="collapse" data-target=".header-nav"><span></span></button>
@@ -250,48 +248,48 @@
     </div><!-- .header-logo -->
     <ul class="header-nav collapse">
         <li>
-            <a href="#" title="Homepages">
+            <a href="#">
                 홈페이지소개
                 <i class="glyph-icon icon-angle-down"></i>
             </a>
             <ul>
-                <li><a href="index.html" title="Homepage example 1"><span>홈페이지 소개</span></a></li>
-                <li><a href="index-alt.html" title="Homepage example 2"><span>커피박 소개</span></a></li>
-                <li><a href="<%=gc%>/menu/service" title="Homepage example 3"><span>에코마일리지</span></a></li>
+                <li><a href="index.html"><span>홈페이지 소개</span></a></li>
+                <li><a href="index-alt.html"><span>커피박 소개</span></a></li>
+                <li><a href="<%=gc%>/menu/service"><span>에코마일리지</span></a></li>
                 
             </ul>
         </li>
         <li>
-            <a href="<%=gc%>/menu/map" title="Hero sections">
+            <a href="#">
                가맹점소개
                 <i class="glyph-icon icon-angle-down"></i>
             </a>
             <ul class="footer-nav">
-                <li><a href="hero-static.html" title="Static hero sections"><span>가맹 카페</span></a></li>
-                <li><a href="hero-alignments.html" title="Hero alignments"><span>가맹 수거업체</span></a></li>
+                <li><a href="<%=gc%>/menu/map"><span>가맹 카페</span></a></li>
+                <li><a href="hero-alignments.html"><span>가맹 수거업체</span></a></li>
            
             </ul>
         </li>
        <li>
-            <a href="#" title="Components">
+            <a href="#">
                 서비스 이용하기
                 <i class="glyph-icon icon-angle-down"></i>
             </a>
             <ul>
                 <li>
-                    <a href="content-boxes.html" title="Components framework">
+                    <a href="<%=gc%>/menu/schedule">
                         <span>예약관련</span>
                     </a>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="<%=gc%>/menu/product" title="Components">
+            <a href="<%=gc%>/menu/product">
                상품페이지
             </a>
         </li>
         <li>
-            <a href="#" title="ContactUs">
+            <a href="#">
                 Contact US               
             </a>
         </li>
@@ -299,7 +297,6 @@
     </ul><!-- .header-nav -->
 </div><!-- .container -->
 </div><!-- .main-header -->
-</div>
 
 <!-- Mixitup -->
 
@@ -509,6 +506,7 @@
     </div>
 </div>
 </div>
+
 <div class="main-footer bg-gradient-4 clearfix">
 	<div class="footer-pane bg-gradient-4">
         <div class="container clearfix">
